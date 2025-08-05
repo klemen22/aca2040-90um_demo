@@ -1,6 +1,5 @@
 from pypylon import pylon
 import cv2
-import numpy as np
 
 # --------------------------------------------------------------------------------------- #
 #                                   Initialize camera                                     #
