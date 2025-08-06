@@ -44,6 +44,9 @@ cv2.namedWindow("Basler Continuos Preview", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("Basler Continuos Preview", 1200, 800)
 
 while camera.IsGrabbing():
+    if cv2.getWindowProperty("Basler Continuos Preview", cv2.WND_PROP_VISIBLE) < 1:
+        break
+
     grab = camera.RetrieveResult(5000, pylon.TimeoutHandling_ThrowException)
 
     if grab.GrabSucceeded():
